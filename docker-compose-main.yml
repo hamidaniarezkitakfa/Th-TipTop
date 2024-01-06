@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:11.22-alpine3.18
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: tiptop_db
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    image: ousama4567/f2i-project-api:main
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+
+  frontend:
+    image: ousama4567/f2i-project-front:main
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+
+volumes:
+  pgdata:

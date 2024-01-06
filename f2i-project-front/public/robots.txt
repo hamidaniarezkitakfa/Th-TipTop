@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /home
+Allow: /blog
+Allow: /contact
+Allow: /participer
+Allow: /gain
+Disallow: /admin/
+Disallow: /signup
+Disallow: /user
+Sitemap: https://dsp-archiwebo22b-ah-em-ii-oe.dspthetiptop.fr/sitemap.xml

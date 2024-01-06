@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  api:
+    image: ousama4567/f2i-project-api:release
+    ports:
+      - "3002:3001"
+    
+
+  frontend:
+    image: ousama4567/f2i-project-front:release
+    expose:
+      - "3000"
+    depends_on:
+      - api
+
+  nginx:
+    image: nginx:alpine
+    ports: 
+      - "80:80"
+    depends_on:
+      - frontend
+    volumes:
+      - ./f2i-project-front/nginx.conf:/etc/nginx/nginx.conf:ro
+
+volumes:
+  pgdata:
