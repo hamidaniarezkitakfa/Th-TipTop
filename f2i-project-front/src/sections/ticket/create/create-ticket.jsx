@@ -25,6 +25,7 @@ const CreateTicket = () => {
   const handleClickCreatePage = async (e) => {
     e.preventDefault();
     try {
+      debugger;
       const response = await createTicket(token);
       if (response.status === 201) {
         toast.success("ticket crée avec success");

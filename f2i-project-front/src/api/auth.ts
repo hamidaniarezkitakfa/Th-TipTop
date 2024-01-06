@@ -12,7 +12,7 @@ interface Log {
   }
 
 export const createUser = (user : User) =>
-    fetch(`https://swagger.dspthetiptop.fr/api/users`, {
+    fetch(`http://localhost:3001/api/users`, {
         method: 'POST',
         body: JSON.stringify(user),
         headers: {
@@ -22,7 +22,7 @@ export const createUser = (user : User) =>
     })
 
     export const logUser = (log : Log) =>
-    fetch(`https://swagger.dspthetiptop.fr/api/users/login`, {
+    fetch(`http://localhost:3001/api/users/login`, {
         method: 'POST',
         body: JSON.stringify(log),
         headers: {
@@ -33,7 +33,7 @@ export const createUser = (user : User) =>
 
     export const getUser = async (id) => {
         try {
-          const response = await axios.get(`https://swagger.dspthetiptop.fr/api/users/${id}`, {
+          const response = await axios.get(`http://localhost:3001/api/users/${id}`, {
             headers: {
               'Content-Type': 'application/json',
             },

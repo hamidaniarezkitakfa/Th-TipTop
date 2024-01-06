@@ -11,4 +11,6 @@ export class SerializeLogginDto extends PartialType(CreateUserDto) {
 
   @Expose()
   image?: string;
+
+
 }

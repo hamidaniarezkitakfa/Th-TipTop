@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:11.22-alpine3.18
+    image: postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: tiptop_db

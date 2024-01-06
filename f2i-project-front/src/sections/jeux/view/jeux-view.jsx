@@ -162,6 +162,7 @@ export default function JeuxPage() {
                   { id: "name", label: "NomJeux" },
                   { id: "company", label: "DateDebut" },
                   { id: "role", label: "DateFin" },
+                  { id: "isVerified", label: "Verified", align: "center" },
                   { id: "status", label: "Status" },
                   { id: "" },
                 ]}

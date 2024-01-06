@@ -8,7 +8,7 @@ interface Contact{
 }
 
 export const createNewsLater = (contact : Contact) => {
-    return axios.post('https://swagger.dspthetiptop.fr/api/contact',contact, {
+    return axios.post('http://localhost:3001/api/contact',contact, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': '*/*'

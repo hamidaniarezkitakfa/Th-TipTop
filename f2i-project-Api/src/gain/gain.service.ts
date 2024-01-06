@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Gain } from './entities/gain.entity';
-import { Ticket } from '../tickets/entities/ticket.entity';
+import { Ticket } from 'src/tickets/entities/ticket.entity';
 import { CreateGainDto } from './dto/create-gain.dto';
 import { UpdateGainDto } from './dto/update-gain.dto';
 

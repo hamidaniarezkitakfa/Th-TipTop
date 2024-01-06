@@ -31,7 +31,7 @@ export const createJeux = (jeux, authToken) => {
       })),
     };
   
-    return axios.post('https://swagger.dspthetiptop.fr/api/jeux', data, {
+    return axios.post('http://localhost:3001/api/jeux', data, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${authToken}`,
@@ -40,7 +40,7 @@ export const createJeux = (jeux, authToken) => {
   };
 
   export const createTicket = (authToken) => {
-    return axios.post('https://swagger.dspthetiptop.fr/api/tickets/createForStorePurchase',{}, {
+    return axios.post('http://localhost:3001/api/tickets/createForStorePurchase',{}, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${authToken}`,
@@ -50,7 +50,7 @@ export const createJeux = (jeux, authToken) => {
 
 export const getUsers = async (authToken) => {
     try {
-        const response = await axios.get(`https://swagger.dspthetiptop.fr/api/users/filtredUsers`, {
+        const response = await axios.get(`http://localhost:3001/api/users/filtredUsers`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${authToken}`
@@ -72,7 +72,7 @@ export const getUsers = async (authToken) => {
 
 export const getJeux = async (authToken) => {
     try {
-        const response = await axios.get(`https://swagger.dspthetiptop.fr/api/jeux`, {
+        const response = await axios.get(`http://localhost:3001/api/jeux`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${authToken}`
@@ -93,7 +93,7 @@ export const getJeux = async (authToken) => {
 
 export const getTickets = async (authToken) => {
     try {
-        const response = await axios.get(`https://swagger.dspthetiptop.fr/api/tickets/findParticipant`, {
+        const response = await axios.get(`http://localhost:3001/api/tickets/findParticipant`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${authToken}`

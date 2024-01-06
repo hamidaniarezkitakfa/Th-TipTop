@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const getTicketInfo = async (ticketNumber, authToken) => {
     try {
-        const response = await axios.get(`https://swagger.dspthetiptop.fr/api/tickets/${ticketNumber}`, {
+        const response = await axios.get(`http://localhost:3001/api/tickets/${ticketNumber}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${authToken}`
@@ -26,7 +26,7 @@ export const updateTicket = async ( ticketId, userId, authToken) => {
     try {
 
 
-        const url = `https://swagger.dspthetiptop.fr/api/tickets/${ticketId}/assignUser/${userId}`;
+        const url = `http://localhost:3001/api/tickets/${ticketId}/assignUser/${userId}`;
 
         const response = await axios.patch(url, {}, {
             headers: {
@@ -49,7 +49,7 @@ export const updateTicket = async ( ticketId, userId, authToken) => {
 
 export const getWin = async (authToken) => {
     try {
-        const response = await axios.get(`https://swagger.dspthetiptop.fr/api/tickets/userHistory`, {
+        const response = await axios.get(`http://localhost:3001/api/tickets/userHistory`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${authToken}`
@@ -71,7 +71,7 @@ export const getWin = async (authToken) => {
 
 export const claimWin = async (gainId, authToken) => {
     try {
-      const url = `https://swagger.dspthetiptop.fr/api/gain/${gainId}`;
+      const url = `http://localhost:3001/api/gain/${gainId}`;
       const dateDeRecuperation = new Date().toISOString();
   
       const response = await axios.patch(url, { dateDeRecuperation }, {

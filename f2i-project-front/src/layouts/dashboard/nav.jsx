@@ -59,7 +59,7 @@ export default function Nav({ openNav, onCloseNav }) {
         <Typography variant="subtitle2">{admin.username}</Typography>
 
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          {isAdmin ? 'Admin' : isWorker ? 'employé' : 'Utilisateur'}
+          {'admin'}
         </Typography>
       </Box>
     </Box>

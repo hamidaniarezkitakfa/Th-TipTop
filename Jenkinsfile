@@ -8,7 +8,7 @@ pipeline {
             }
         }
 
-        stage('Build API Docker Image') {
+        stage('Build API Docker Image ') {
             steps {
                 dir('f2i-project-Api') {
                     sh 'docker build -t ousama4567/f2i-project-api:${BRANCH_NAME} .'
@@ -24,8 +24,8 @@ pipeline {
             }
         }
 
-        //uncomment below stage when you want to enable testing for API 
-	    /*fff
+        //uncomment below stage when you want to enable testing for API
+        /*
         stage('Run API Tests') {
             steps {
                 dir('f2i-project-Api') {
@@ -35,9 +35,9 @@ pipeline {
                 }
             }
         }
-	    */
+        */
+        
 
-	
         stage('Push API Image to Docker Hub') {
             steps {
                 dir('f2i-project-Api') {
@@ -59,21 +59,18 @@ pipeline {
                 script {
                     if (env.BRANCH_NAME == 'dev') {
                         echo "Deploying to Development environment"  
-                        //sh 'docker compose -f docker-compose-dev.yml down'
                         sh 'docker compose -f docker-compose-dev.yml up -d'
                         echo "API:3003"
                         echo "front:82"
                         echo "database:5434"     
                     } else if (env.BRANCH_NAME == 'release') {
                         echo "Deploying to Staging environment"  
-                        //sh 'docker compose -f docker-compose-release.yml down'
                         sh 'docker compose -f docker-compose-release.yml up -d'
                         echo "API:3002"
                         echo "front:81"
                         echo "database:5433" 
                     } else if (env.BRANCH_NAME == 'main') {
-                        echo "Deploying to Production environment"         
-                        //sh 'docker compose -f docker-compose-main.yml down'    
+                        echo "Deploying to Production environment"              
                         sh 'docker compose -f docker-compose-main.yml up -d'
                         echo "API:3001"
                         echo "front:80"

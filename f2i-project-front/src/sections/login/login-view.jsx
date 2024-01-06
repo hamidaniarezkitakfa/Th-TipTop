@@ -24,7 +24,6 @@ import { accountService } from '../../services/account.service';
 import { useNavigate} from 'react-router-dom';
 import { useAuth } from '../../services/authContex';
 import jwt_decode from 'jwt-decode';
-import { toast } from 'react-toastify';
 
 // ----------------------------------------------------------------------
 
@@ -59,15 +58,12 @@ export default function LoginView() {
           await setToken(token);
           handleAuthChange(true);
           if (decoded && (decoded.isAdmin || decoded.isWorker) ) {
-            toast.success("Connexion réussite");
             router.push('/admin');
           } else {
-            toast.error("Erreur de Connexion, Vous étes pas autorisé a connecter")
             router.push('/admin/login');
             localStorage.clear();
           }
       } else {
-        toast.error("Une Erreur est servenue verifier vos coordoner")
           
       }
   } catch (error) {
@@ -86,7 +82,7 @@ export default function LoginView() {
 
         <TextField
           name="password"
-          label="Mot de Passe"
+          label="Mot de passe"
           value={loginForm.password}
           onChange={handleChange}
           type={showPassword ? 'text' : 'password'}
@@ -104,7 +100,7 @@ export default function LoginView() {
 
       <Stack direction="row" alignItems="center" justifyContent="flex-end" sx={{ my: 3 }}>
         <Link variant="subtitle2" underline="hover">
-        mot de passe oublies?
+          mot de passe oublies?
         </Link>
       </Stack>
 
@@ -116,7 +112,7 @@ export default function LoginView() {
         color="inherit"
         onClick={handleClick}
       >
-         Connexion
+        Connexion
       </LoadingButton>
     </>
   );
@@ -177,11 +173,12 @@ export default function LoginView() {
               <Iconify icon="eva:facebook-fill" color="#1877F2" />
             </Button>
 
+            
           </Stack>
 
           <Divider sx={{ my: 3 }}>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            OU
+              OU
             </Typography>
           </Divider>
 

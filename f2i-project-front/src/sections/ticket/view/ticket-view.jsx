@@ -22,6 +22,7 @@ import UserTableToolbar from "../user-table-toolbar";
 import { emptyRows, applyFilter, getComparator } from "../utils";
 import { getTickets } from "../../../api/admin";
 import { useNavigate } from "react-router-dom";
+import { createTicket } from "../../../api/admin";
 
 // ----------------------------------------------------------------------
 
@@ -114,6 +115,7 @@ export default function TicketPage() {
   const handleClickCreatePage = () => {
     navigate("/admin/ticket/create");
   };
+  console.log(ticketData)
 
   const notFound = !dataFiltered.length && !!filterName;
 

@@ -11,7 +11,7 @@ import IconButton from '@mui/material/IconButton';
 import { accountService } from '../../../services/account.service';
 import { useAuth } from '../../../services/authContex';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+
 import { account } from '../../../_mock/account';
 
 // ----------------------------------------------------------------------
@@ -51,7 +51,6 @@ export default function AccountPopover() {
     accountService.logout();
     handleAuthChange(false);
     handleClose();
-    toast.success("Déconnexion réussie.");
     navigate('/admin/login');
   };
 

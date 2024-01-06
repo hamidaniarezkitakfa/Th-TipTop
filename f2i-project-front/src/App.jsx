@@ -88,10 +88,10 @@ function App() {
       children: [
         { element: <IndexPage />, index: true },
         { path: 'user', element: <UserPage /> },
-        // { path: 'products', element: <ProductsPage /> },
+        { path: 'products', element: <ProductsPage /> },
         { path: 'jeux', element: <JeuxPage /> },
         { path: 'jeux/create', element: <CreateJeux /> },
-        // { path: 'blog', element: <BlogPage /> },
+        { path: 'blog', element: <BlogPage /> },
         { path: 'ticket', element: <TicketPage /> },
         { path: 'user/create', element: <CreatePage /> },
         { path: 'ticket/create', element: <CreateTicket /> },

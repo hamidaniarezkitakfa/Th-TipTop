@@ -10,16 +10,10 @@ COPY . .
 
 RUN npm run build
 
-RUN npm install -g serve
+FROM nginx:alpine
 
-EXPOSE 3000
+COPY --from=build /app/dist /usr/share/nginx/html
 
-CMD ["serve","-s","dist"]
+EXPOSE 80
 
-#FROM nginx:alpine
-
-#COPY --from=build /app/dist /usr/share/nginx/html
-
-#EXPOSE 80
-
-#CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]

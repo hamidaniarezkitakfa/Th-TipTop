@@ -53,6 +53,8 @@ export default function UserTableRow({
 
         <TableCell>{role}</TableCell>
 
+        <TableCell align="center">Gagner un voyage au maroc</TableCell>
+
         <TableCell>
           <Label color={(status === 'notActive' && 'error') || 'success'}>{status}</Label>
         </TableCell>

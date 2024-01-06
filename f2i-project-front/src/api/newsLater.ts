@@ -5,7 +5,7 @@ interface Email{
 }
 
 export const createNewsLater = (email : Email) => {
-    return axios.post('https://swagger.dspthetiptop.fr/api/blogs/addSubscriber',email, {
+    return axios.post('http://localhost:3001/api/blogs/addSubscriber',email, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': '*/*'

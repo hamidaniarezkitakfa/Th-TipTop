@@ -58,6 +58,7 @@ export default function UserTableRow({
 
         <TableCell align="center">{isVerified}</TableCell>
 
+
         <TableCell align="right">
           <IconButton onClick={handleOpenMenu}>
             <Iconify icon="eva:more-vertical-fill" />
